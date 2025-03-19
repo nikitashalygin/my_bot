@@ -58,10 +58,10 @@
 
     <!-- LEFT WHEEL LINK -->
 
-    <joint name="left_wheel_joint" type="continuous">
-        <parent link="base_link"/>
+    <!-- <joint name="left_wheel_joint" type="continuous">
+        <parent link="chassis"/>
         <child link="left_wheel"/>
-        <origin xyz="0 0.05 0.01" rpy="-${pi/2} 0 0"/>
+        <origin xyz="0.04 0.05 0.01" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
@@ -84,14 +84,14 @@
 
     <gazebo reference="left_wheel">
         <material>Gazebo/Blue</material>
-    </gazebo>
+    </gazebo> -->
 
     <!-- RIGHT WHEEL LINK -->
 
-    <joint name="right_wheel_joint" type="continuous">
-        <parent link="base_link"/>
+    <!-- <joint name="right_wheel_joint" type="continuous">
+        <parent link="chassis"/>
         <child link="right_wheel"/>
-        <origin xyz="0 -0.05 0.01" rpy="${pi/2} 0 0"/>
+        <origin xyz="0.04 -0.05 0.01" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
     </joint>
 
@@ -114,14 +114,14 @@
 
     <gazebo reference="right_wheel">
         <material>Gazebo/Blue</material>
-    </gazebo>
+    </gazebo> -->
 
     <!-- FRONT CASTER WHEEL -->
 
-    <joint name="caster_wheel_front_joint" type="fixed">
+    <!-- <joint name="caster_wheel_front_joint" type="fixed">
         <parent link="chassis"/>
         <child link="caster_wheel_front"/>
-        <origin xyz="0.18 0 0.011" rpy="0 0 0"/>
+        <origin xyz="0.15 0 0.011" rpy="0 0 0"/>
     </joint>
 
     <link name="caster_wheel_front">
@@ -141,11 +141,13 @@
 
     <gazebo reference="caster_wheel_front">
         <material>Gazebo/Black</material>
-    </gazebo>
+        <mu1 value="0.0001"/>
+        <mu2 value="0.0001"/>
+    </gazebo> -->
     
     <!-- REAR CASTER WHEEL -->
 
-    <joint name="caster_wheel_rear_joint" type="fixed">
+    <!-- <joint name="caster_wheel_rear_joint" type="fixed">
         <parent link="chassis"/>
         <child link="caster_wheel_rear"/>
         <origin xyz="0 0 0.011" rpy="0 0 0"/>
@@ -168,7 +170,7 @@
 
     <gazebo reference="caster_wheel_rear">
         <material>Gazebo/Black</material>
-    </gazebo>
+    </gazebo> -->
 
 
 </robot>

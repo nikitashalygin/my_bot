@@ -8,7 +8,7 @@
             <!-- Wheel Information -->
             <left_joint>left_wheel_joint</left_joint>
             <right_joint>right_wheel_joint</right_joint>
-            <wheel_separation>0.08</wheel_separation>
+            <wheel_separation>0.1</wheel_separation>
             <wheel_diameter>0.06</wheel_diameter>
     
 
@@ -26,6 +26,10 @@
             <publish_wheel_tf>true</publish_wheel_tf>
     
     
+        </plugin>
+
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <parameters>$(find my_bot)/config/my_controllers.yaml</parameters>
         </plugin>
     </gazebo>
 
